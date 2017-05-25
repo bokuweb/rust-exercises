@@ -6,13 +6,14 @@ fn main() {
     //output(message);
 }
 
+// Create tuple.
 fn words() -> (String, String) {
     (format!("こんにちは"), format!("世界"))
 }
 
 fn output(text: String) {
-    let kanji_only = remove_hiragana(text.clone());
-    println!("{}", kanji_only.clone());
+    let kanji_only = remove_hiragana(&text);
+    println!("{}", kanji_only);
     /*
     ゴール2：次の行をアンコメントすると何がおきるでしょうか？
     これをコンパイルを通すにはどうすれば良いでしょうか？
@@ -25,7 +26,7 @@ fn output(text: String) {
     */
 }
 
-fn remove_hiragana(text: String) -> String {
+fn remove_hiragana(text: &str) -> String {
     /*
      ゴール1：コンパイルを通すには何を変更すれば良いでしょうか
     */
@@ -35,6 +36,7 @@ fn remove_hiragana(text: String) -> String {
             result.push(c);
         };
     }
+    // ;を打つと;の後にnil?undefinedがあるという評価となる => ;書いては駄目
     result
 }
 
