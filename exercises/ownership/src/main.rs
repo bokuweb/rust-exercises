@@ -12,7 +12,7 @@ fn words() -> (String, String) {
 }
 
 fn output(text: String) {
-    let kanji_only = remove_hiragana(&text);
+    let (text, kanji_only) = remove_hiragana(text);
     println!("{}", kanji_only);
     /*
     ゴール2：次の行をアンコメントすると何がおきるでしょうか？
@@ -26,7 +26,8 @@ fn output(text: String) {
     */
 }
 
-fn remove_hiragana(text: &str) -> String {
+// return tuple
+fn remove_hiragana(text: String) -> (String, String) {
     /*
      ゴール1：コンパイルを通すには何を変更すれば良いでしょうか
     */
@@ -36,7 +37,8 @@ fn remove_hiragana(text: &str) -> String {
             result.push(c);
         };
     }
-    // ;を打つと;の後にnil?undefinedがあるという評価となる => ;書いては駄目
-    result
+    // ;を打つと;の後にnil?undefinedがあるという評価となる => ;最後でreturnするやつに;書いては駄目
+    // return result; と書いても良い
+    (text, result)
 }
 
