@@ -42,3 +42,5 @@ fn remove_hiragana(text: String) -> (String, String) {
     (text, result)
 }
 
+// mut textとかにすると再代入可能
+// 同名の別変数の定義シャドウイング fn f(mut x: String) (...) とかなら再代入も可能
