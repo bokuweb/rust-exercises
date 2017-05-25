@@ -29,7 +29,7 @@ fn remove_hiragana(text: String) -> String {
     /*
      ゴール1：コンパイルを通すには何を変更すれば良いでしょうか
     */
-    let result = String::new();
+    let mut result = String::new();
     for c in text.chars() {
         if c < 'ぁ' || 'ん' < c {
             result.push(c);
