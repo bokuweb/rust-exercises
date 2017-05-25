@@ -10,8 +10,11 @@
 #![allow(dead_code)]
 
 fn main() {
-    println!("Hello, world!");
-    //greetings(name);
+    let name = format!("hello bokuweb");
+    // println!("{:?}", name);
+    greetings(name.clone());
+    greetings(name.clone());
+    greetings(name);
 }
 
 fn greetings(name: String) {
