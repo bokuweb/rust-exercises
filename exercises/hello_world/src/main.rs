@@ -15,9 +15,16 @@ fn main() {
     greetings(name.clone());
     greetings(name.clone());
     greetings(name);
+
+    let value = 1;
+    // 数値は自動的に内部でcloneが走る
+    println!("{} + 1 = {}", value, add_one(value));
+}
+
+fn add_one(a: i32) -> i32 {
+    a + 1
 }
 
 fn greetings(name: String) {
     println!("Hello, {}!", name);
 }
-
