@@ -14,6 +14,7 @@ fn main() {
     greet(r);
 }
 
-fn greet(name: &str) {
+fn greet(name: &String) {
+    // 内部で自動的に参照から実態に変えられる => *name　としなくてよい 
     println!("Hello {}", name);
 }
