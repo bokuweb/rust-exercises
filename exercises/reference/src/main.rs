@@ -8,8 +8,10 @@
 
 fn main() {
     let name = format!("dear rustaceans");
-    greet(&name);
-    greet(&name);
+    // &mut を使うと参照先の変更も可能
+    let r = &name;
+    greet(r);
+    greet(r);
 }
 
 fn greet(name: &str) {
